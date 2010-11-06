@@ -1,10 +1,12 @@
 # Django settings for pypassgen project.
-
+import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+PROJECT_DIR = os.path.dirname(__file__)
+
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Helmy Giacoman', 'helmygb@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -41,7 +43,7 @@ USE_I18N = True
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale
-USE_L10N = True
+USE_L10N = False
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -78,9 +80,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'pypassgen.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    PROJECT_DIR + '/templates',
 )
 
 INSTALLED_APPS = (
@@ -89,8 +89,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'pypassgen.core',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
